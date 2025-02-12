@@ -2,12 +2,12 @@
 	"format_version": 2,
 	"header": {
 		"name": "RealTime Sync",
-		"description": "Versions 0.0.1",
-		"uuid": "0a29c7cd-bc81-4701-86d0-18bc9f042611",
+		"description": "Versions 0.0.2",
+		"uuid": "7f9de4d5-839d-4171-84d7-5101917162cf",
 		"version": [
 			0,
 			0,
-			1
+			2
 		],
 		"min_engine_version": [
 			1,
@@ -18,7 +18,7 @@
 	"modules": [
 		{
 			"type": "data",
-			"uuid": "f12ea759-33aa-4a6f-bf94-3a2648897a70",
+			"uuid": "cf2e075b-94b6-44eb-98fd-61485225c900",
 			"version": [
 				0,
 				0,
@@ -29,7 +29,7 @@
 			"type": "script",
 			"language": "javascript",
 			"entry": "scripts/src/index.js",
-			"uuid": "b46681e9-442c-468d-b1be-968c9861aff0",
+			"uuid": "ff53d4ed-35d0-457f-95e2-62caddab2ed8",
 			"version": "1.1.0"
 		}
 	],
@@ -42,7 +42,7 @@
 		{
 			"description": "@minecraft/server module dependency",
 			"module_name": "@minecraft/server",
-			"version": "1.17.0-beta"
+			"version": "1.18.0-beta"
 		},
 		{
 			"description": "@minecraft/server-ui module dependency",

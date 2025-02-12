@@ -2,12 +2,12 @@
 	"format_version": 2,
 	"header": {
 		"name": "Vehicle src",
-		"description": "Versions 0.0.1",
-		"uuid": "73818171-d39a-4d31-bc42-f602d56699c6",
+		"description": "Versions 0.0.2",
+		"uuid": "10f69bf5-6d2a-487b-b4c1-70ce95d9f0b5",
 		"version": [
 			0,
 			0,
-			1
+			2
 		],
 		"min_engine_version": [
 			1,
@@ -18,7 +18,7 @@
 	"modules": [
 		{
 			"type": "data",
-			"uuid": "f187a5fc-498b-4c6d-8211-8c2bfe2d7770",
+			"uuid": "f81644c0-713d-49f3-88f6-792ece8f9497",
 			"version": [
 				0,
 				0,
@@ -29,7 +29,7 @@
 			"type": "script",
 			"language": "javascript",
 			"entry": "scripts/src/index.js",
-			"uuid": "723d9260-6897-430c-8d7e-603ef3e375be",
+			"uuid": "97d0f104-12f1-48e4-b97b-e9512b65347a",
 			"version": "1.1.0"
 		}
 	],
@@ -42,7 +42,7 @@
 		{
 			"description": "@minecraft/server module dependency",
 			"module_name": "@minecraft/server",
-			"version": "1.17.0-beta"
+			"version": "1.18.0-beta"
 		},
 		{
 			"description": "@minecraft/server-ui module dependency",

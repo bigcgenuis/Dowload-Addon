@@ -2,12 +2,12 @@
 	"format_version": 2,
 	"header": {
 		"name": "Medic Addon",
-		"description": "Versions 0.0.2 By.Bamip1",
-		"uuid": "33a2e48e-07ce-457e-bce0-e8c5e640df25",
+		"description": "Versions 0.0.3 By.Bamip1",
+		"uuid": "32b3ee18-3990-4a03-bd69-79bc4be159b7",
 		"version": [
 			0,
 			0,
-			2
+			3
 		],
 		"min_engine_version": [
 			1,
@@ -18,7 +18,7 @@
 	"modules": [
 		{
 			"type": "data",
-			"uuid": "4d5da8b7-1764-4013-b24a-03e87d947b21",
+			"uuid": "fc0745f2-b320-46d9-ae81-2aae1dea4950",
 			"version": [
 				0,
 				0,
@@ -29,7 +29,7 @@
 			"type": "script",
 			"language": "javascript",
 			"entry": "scripts/index.js",
-			"uuid": "9d0253e0-a115-42c8-b233-eebd6b42dacf",
+			"uuid": "9cbf9606-9bec-4348-8c7f-e27d9046ad93",
 			"version": "1.1.0"
 		}
 	],
@@ -42,7 +42,7 @@
 		{
 			"description": "@minecraft/server module dependency",
 			"module_name": "@minecraft/server",
-			"version": "1.17.0-beta"
+			"version": "1.18.0-beta"
 		},
 		{
 			"description": "@minecraft/server-ui module dependency",

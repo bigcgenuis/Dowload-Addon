@@ -2,12 +2,12 @@
 	"format_version": 2,
 	"header": {
 		"name": "Police Actionbar",
-		"description": "Versions 0.0.2 By.Bamip1",
-		"uuid": "ae83bec7-32e3-4864-aa7b-35134f12a41e",
+		"description": "Versions 0.0.3 By.Bamip1",
+		"uuid": "8707a483-6c0f-40bb-a19b-c7b7d3be3327",
 		"version": [
 			0,
 			0,
-			2
+			3
 		],
 		"min_engine_version": [
 			1,
@@ -18,7 +18,7 @@
 	"modules": [
 		{
 			"type": "data",
-			"uuid": "525e2394-bc04-42db-b1e1-4ea61a081bd1",
+			"uuid": "39ae1361-250c-4a5d-ba63-97e229fb0805",
 			"version": [
 				0,
 				0,
@@ -29,7 +29,7 @@
 			"type": "script",
 			"language": "javascript",
 			"entry": "scripts/index.js",
-			"uuid": "a458b88f-82e5-453c-97b6-00b1435395b0",
+			"uuid": "9f9596ff-e9ce-4158-bf2c-9dc43be799eb",
 			"version": "1.1.0"
 		}
 	],
@@ -42,7 +42,7 @@
 		{
 			"description": "@minecraft/server module dependency",
 			"module_name": "@minecraft/server",
-			"version": "1.17.0-beta"
+			"version": "1.18.0-beta"
 		},
 		{
 			"description": "@minecraft/server-ui module dependency",

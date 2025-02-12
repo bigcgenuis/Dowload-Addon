@@ -2,12 +2,12 @@
 	"format_version": 2,
 	"header": {
 		"name": "Transfer money",
-		"description": "Versions 0.0.3 By.Bamip1",
-		"uuid": "5ee41906-2b5b-44a6-9f11-205a75680fab",
+		"description": "Versions 0.0.4 By.Bamip1",
+		"uuid": "a5414084-d9d6-4f3d-bff2-809695ded297",
 		"version": [
 			0,
 			0,
-			2
+			4
 		],
 		"min_engine_version": [
 			1,
@@ -18,7 +18,7 @@
 	"modules": [
 		{
 			"type": "data",
-			"uuid": "31da6349-0785-4612-afb1-614652f41c48",
+			"uuid": "5075322f-1d6c-4e33-b484-784a5f4edb26",
 			"version": [
 				0,
 				0,
@@ -29,7 +29,7 @@
 			"type": "script",
 			"language": "javascript",
 			"entry": "scripts/index.js",
-			"uuid": "d048adcd-f701-450b-87a6-f6da1fa7dca9",
+			"uuid": "7b686918-f2ed-4f00-82d8-b7ba0eb0b944",
 			"version": "1.1.0"
 		}
 	],
@@ -42,7 +42,7 @@
 		{
 			"description": "@minecraft/server module dependency",
 			"module_name": "@minecraft/server",
-			"version": "1.17.0-beta"
+			"version": "1.18.0-beta"
 		},
 		{
 			"description": "@minecraft/server-ui module dependency",

@@ -2,12 +2,12 @@
 	"format_version": 2,
 	"header": {
 		"name": "Police Title",
-		"description": "Versions 0.0.3 By.Bamip1",
-		"uuid": "b4070a05-080f-4eb7-bf74-b9bcf1062456",
+		"description": "Versions 0.0.4 By.Bamip1",
+		"uuid": "c414e2a8-3c86-4cd4-b81d-8abd6bc936c9",
 		"version": [
 			0,
 			0,
-			2
+			4
 		],
 		"min_engine_version": [
 			1,
@@ -18,7 +18,7 @@
 	"modules": [
 		{
 			"type": "data",
-			"uuid": "60094f15-6822-44ea-80fe-84187f0fb2b4",
+			"uuid": "06ee441f-c2c4-4936-bec3-844e9ae45779",
 			"version": [
 				0,
 				0,
@@ -29,7 +29,7 @@
 			"type": "script",
 			"language": "javascript",
 			"entry": "scripts/index.js",
-			"uuid": "3465a009-9fdc-459e-bb89-6182cd9ef528",
+			"uuid": "28a944f6-911a-407c-9100-bbfddae16a25",
 			"version": "1.1.0"
 		}
 	],
@@ -42,7 +42,7 @@
 		{
 			"description": "@minecraft/server module dependency",
 			"module_name": "@minecraft/server",
-			"version": "1.17.0-beta"
+			"version": "1.18.0-beta"
 		},
 		{
 			"description": "@minecraft/server-ui module dependency",
