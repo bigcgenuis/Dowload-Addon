@@ -1,0 +1,24 @@
+{
+	"format_version": 2,
+	"header": {
+		"name": "Bank Addon",
+		"description": "Version 0.0.1 By.Bamip1",
+		"uuid": "ffc88a8f-50c4-448b-be4c-7f417781a430",
+		"version": [1, 0, 0],
+		"min_engine_version": [1, 16, 0]
+	},
+	"metadata": {
+		"authors": ["Version 0.0.1 By.Bamip1"],
+		"generated_with": {
+			"blockbench_entity_wizard": ["1.6.0"]
+		}
+	},
+	"modules": [
+		{
+			"description": "Version 0.0.1 By.Bamip1",
+			"type": "resources",
+			"uuid": "899576a2-29a3-4a7e-b410-858101514fd9",
+			"version": [1, 0, 0]
+		}
+	]
+}

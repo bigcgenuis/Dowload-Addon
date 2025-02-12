@@ -1,0 +1,30 @@
+{
+  "format_version": 1,
+  "header": {
+    "description": "Versions 0.0.1 By.Bamip1",
+    "name": "Buy & Sell",
+    "uuid": "7135ec83-9cc8-4ac3-8594-2b7548a5626e",
+    "version": [
+      0,
+      0,
+      1
+    ],
+    "min_engine_version": [
+      1,
+      8,
+      0
+    ]
+  },
+  "modules": [
+    {
+      "description": "Versions 0.0.1 By.Bamip1",
+      "type": "resources",
+      "uuid": "93cd9693-b2e2-49cf-8a49-c4ad1a7263d5",
+      "version": [
+        0,
+        0,
+        1
+      ]
+    }
+  ]
+}

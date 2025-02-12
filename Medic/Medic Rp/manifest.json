@@ -1,0 +1,30 @@
+{
+  "format_version": 1,
+  "header": {
+    "description": "Versions 0.0.1 By.Bamip1",
+    "name": "Medic Addon",
+    "uuid": "02dcd765-1a3c-49b7-b14c-2a6ba144615b",
+    "version": [
+      0,
+      0,
+      1
+    ],
+    "min_engine_version": [
+      1,
+      8,
+      0
+    ]
+  },
+  "modules": [
+    {
+      "description": "Versions 0.0.1 By.Bamip1",
+      "type": "resources",
+      "uuid": "d4580732-0acd-4b53-bff5-e6a9b7b20978",
+      "version": [
+        0,
+        0,
+        1
+      ]
+    }
+  ]
+}

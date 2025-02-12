@@ -1,0 +1,15 @@
+{
+  "resource_pack_name": "vanilla",
+  "texture_name": "atlas.items",
+  "texture_data": {
+    "b:scraps": {
+      "textures": "textures/items/scraps"
+    },
+    "b:scrap": {
+      "textures": "textures/items/b_scrap"
+    },
+    "gold_nugget": {
+      "textures": "textures/ui/color_picker"
+    }
+  }
+}

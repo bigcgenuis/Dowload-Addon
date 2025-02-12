@@ -1,0 +1,30 @@
+{
+  "format_version": 1,
+  "header": {
+    "description": "Versions 0.0.1 By.Bamip1",
+    "name": "Police",
+    "uuid": "8636314c-0fc0-4040-bfea-da4ec7779a53",
+    "version": [
+      0,
+      0,
+      1
+    ],
+    "min_engine_version": [
+      1,
+      8,
+      0
+    ]
+  },
+  "modules": [
+    {
+      "description": "Versions 0.0.1 By.Bamip1",
+      "type": "resources",
+      "uuid": "59722743-3a68-4238-b8a3-9d8d3576f8ea",
+      "version": [
+        0,
+        0,
+        1
+      ]
+    }
+  ]
+}

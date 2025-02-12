@@ -1,0 +1,13 @@
+{
+  "format_version": "1.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "b:scraps",
+      "category": "Equipment"
+    },
+    "components": {
+      "minecraft:icon": "b:scraps",
+      "minecraft:render_offsets": "miscellaneous"
+    }
+  }
+}

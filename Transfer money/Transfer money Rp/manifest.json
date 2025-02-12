@@ -1,0 +1,30 @@
+{
+  "format_version": 1,
+  "header": {
+    "description": "Versions 0.0.1 By.Bamip1",
+    "name": "Transfer money",
+    "uuid": "99aaaaa7-001f-48fc-a2f5-0b9f18cbe764",
+    "version": [
+      0,
+      0,
+      1
+    ],
+    "min_engine_version": [
+      1,
+      8,
+      0
+    ]
+  },
+  "modules": [
+    {
+      "description": "Versions 0.0.1 By.Bamip1",
+      "type": "resources",
+      "uuid": "af368cbd-5801-4148-8720-0fd66c676faf",
+      "version": [
+        0,
+        0,
+        1
+      ]
+    }
+  ]
+}

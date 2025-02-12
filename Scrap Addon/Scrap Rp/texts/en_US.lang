@@ -1,0 +1,4 @@
+entity.b:scrap.name=Scrap
+item.spawn_egg.entity.b:scrap.name=Spawn Scrap
+item.b:scraps.name=เศษเหล็ก
+item.gold_nugget.name=§aConfig Scrap

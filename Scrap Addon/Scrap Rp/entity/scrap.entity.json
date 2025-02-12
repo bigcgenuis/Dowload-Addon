@@ -1,0 +1,22 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "b:scrap",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/scrap"
+			},
+			"geometry": {
+				"default": "geometry.scrap"
+			},
+			"render_controllers": ["controller.render.default"],
+			"spawn_egg": {
+				"base_color": "#71bb3a",
+				"overlay_color": "#8e7921"
+			}
+		}
+	}
+}

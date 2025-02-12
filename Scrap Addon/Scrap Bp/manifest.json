@@ -1,0 +1,53 @@
+{
+	"format_version": 2,
+	"header": {
+		"name": "Scrap Addon",
+		"description": "Versions 0.0.2 By.Bamip1",
+		"uuid": "0414e42f-4816-4234-9ce9-4246febc6342",
+		"version": [
+			0,
+			0,
+			1
+		],
+		"min_engine_version": [
+			1,
+			18,
+			0
+		]
+	},
+	"modules": [
+		{
+			"type": "data",
+			"uuid": "dba5e18a-a87c-4133-8645-16f59c63e20d",
+			"version": [
+				0,
+				0,
+				1
+			]
+		},
+		{
+			"type": "script",
+			"language": "javascript",
+			"entry": "scripts/index.js",
+			"uuid": "f7fc2be8-041b-4c04-8db4-1420f20acdc9",
+			"version": "1.1.0"
+		}
+	],
+	"metadata": {
+		"authors": [
+			"Bamip1"
+		]
+	},
+	"dependencies": [
+		{
+			"description": "@minecraft/server module dependency",
+			"module_name": "@minecraft/server",
+			"version": "1.17.0-beta"
+		},
+		{
+			"description": "@minecraft/server-ui module dependency",
+			"module_name": "@minecraft/server-ui",
+			"version": "1.2.0"
+		}
+	]
+}

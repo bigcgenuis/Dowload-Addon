@@ -1,0 +1,38 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "b:scrap",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"components": {
+			"minecraft:physics": {
+				"has_gravity": true,
+				"has_collision": true
+			},
+			"minecraft:knockback_resistance":  {
+                "value":  100,
+                "max":  100
+            },
+			"minecraft:pushable": {
+				"is_pushable": false
+			},
+			"minecraft:push_through": {
+				"value": 1
+			},
+			"minecraft:nameable":  {
+                "alwaysShow":  false,
+                "allowNameTagRenaming":  true
+            },
+            "minecraft:collision_box":  {
+                "height":  0.4,
+                "width":  0.9
+            },
+			"minecraft:scale":  {
+                "value":  1.5
+            }
+		}
+	}
+}
