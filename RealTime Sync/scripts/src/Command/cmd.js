@@ -1,5 +1,5 @@
 import { world } from "@minecraft/server";
-import { Database } from "../../database/db";
+import { Database } from "../../database/Scoreboard Db";
 let db = new Database('RealTimeSync');
 world.beforeEvents.chatSend.subscribe(e => {
     let player = e.sender;

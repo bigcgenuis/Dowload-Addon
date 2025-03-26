@@ -1,20 +1,27 @@
-import "./Command/cmd"
+import "./Command/cmd";
 import { system, world } from "@minecraft/server";
 import { getTime } from "../minecraft/timeGMT";
-import { Database } from "../database/db";
+import { Database } from "../database/Scoreboard Db";
+
 let db = new Database('RealTimeSync');
-if (db.get('gmtZone') === undefined) db.set('gmtZone', 7, 0);
-if (db.get('timeSet') === undefined) db.set('timeSet', true, 0);
-if (db.get('show') === undefined) db.set('show', false, 0);
-if (db.get('type') === undefined) db.set('type', 'title', 0);
-system.runInterval(() => {
-    let { gameTime, gmtTime } = getTime(Number(db.get("gmtZone")));
-    if (db.get(`timeSet`) === "true") {
-        world.setTimeOfDay(gameTime);
-    }
-    let players = world.getAllPlayers();
-    players.forEach(player => {
-        if (db.get("show") === "true")
-        player.runCommand(`title @s ${db.get("type")} ${gmtTime}`);
+
+async function initializeDatabase() {
+    if (await db.get('gmtZone') === undefined || !await db.get('gmtZone')) db.set('gmtZone', 7, 0);
+    if (await db.get('timeSet') === undefined || !await db.get('timeSet')) db.set('timeSet', true, 0);
+    if (await db.get('show') === undefined || !await db.get('show')) db.set('show', false, 0);
+    if (await db.get('type') === undefined || !await db.get('type')) db.set('type', 'title', 0);
+}
+
+initializeDatabase().then(() => {
+    system.runInterval(async () => {
+        let { gameTime, gmtTime } = getTime(Number(await db.get("gmtZone")));
+        if (await db.get(`timeSet`) === "true") {
+            world.setTimeOfDay(gameTime);
+        }
+        let players = world.getAllPlayers();
+        players.forEach(async player => {
+            if (await db.get("show") === "true")
+                player.runCommand(`title @s ${await db.get("type")} ${gmtTime}`);
+        });
     });
 });

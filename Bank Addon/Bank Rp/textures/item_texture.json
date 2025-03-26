@@ -1,9 +1,0 @@
-{
-  "resource_pack_name": "vanilla",
-  "texture_name": "atlas.items",
-  "texture_data": {
-    "ghast_tear": {
-      "textures": "textures/ui/settings_glyph_color_2x"
-    }
-  }
-}
