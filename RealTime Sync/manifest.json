@@ -42,7 +42,7 @@
 		{
 			"description": "@minecraft/server module dependency",
 			"module_name": "@minecraft/server",
-			"version": "1.18.0"
+			"version": "1.17.0"
 		},
 		{
 			"description": "@minecraft/server-ui module dependency",
