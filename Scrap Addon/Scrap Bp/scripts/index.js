@@ -1,1 +1,125 @@
-const _0x16e95d=_0xf0d2;(function(_0x3563c2,_0xf23317){const _0x147f61=_0xf0d2,_0x38548=_0x3563c2();while(!![]){try{const _0x41cff5=-parseInt(_0x147f61(0x16b))/0x1+parseInt(_0x147f61(0x17c))/0x2*(parseInt(_0x147f61(0x196))/0x3)+parseInt(_0x147f61(0x16c))/0x4+parseInt(_0x147f61(0x187))/0x5+parseInt(_0x147f61(0x180))/0x6+parseInt(_0x147f61(0x161))/0x7+-parseInt(_0x147f61(0x19d))/0x8;if(_0x41cff5===_0xf23317)break;else _0x38548['push'](_0x38548['shift']());}catch(_0x3a8131){_0x38548['push'](_0x38548['shift']());}}}(_0x5e50,0x72555));import{world,system}from'@minecraft/server';import{ActionFormData,ModalFormData,MessageFormData}from'@minecraft/server-ui';function _0x5e50(){const _0x2e8b55=['scoreboard','scoreboard\x20objectives\x20add\x20coling\x20dummy','Scrap\x20Addon','effect\x20@s\x20resistance\x2099999\x20255\x20true','player','801913Qbpwak','1353912KliDWC','scoreboard\x20players\x20set\x20@s\x20coling\x2010','playsound\x20random.break','getAllPlayers','getObjective','formValues','name','playsound\x20random.pop2\x20@s\x20~~~15','playerInteractWithEntity','collecting','dropdown','getScore','coling','playsound\x20random.orb\x20@s\x20~~~10','hasTag','string','2ycxDQR','minecraft:gold_nugget','nameTag','runCommand','347220nGnhfq','cancel','scoreboard\x20objectives\x20add\x20cd_col\x20dummy','b:scrap','inputpermission\x20set\x20@s\x20movement\x20enabled','scoreboard\x20players\x20set\x20@s\x20cd_col\x2030','beforeEvents','4077395TdzOdD','repeat','setDynamicProperty','overworld','tag\x20@s\x20remove\x20collecting','\x20^^^-1','then','tp\x20','runInterval','\x20@s','tag\x20@s\x20remove\x20','tag\x20@s\x20add\x20','source','scoreboard\x20players\x20remove\x20@s\x20coling\x201','Title','131502QwamSm','getDimension','sendMessage','target','cd_col','getEntities','col','2390384Qhstxt','titleraw\x20@s\x20','forEach','§cมีคนเก็บไปแล้ว','getParticipants','title\x20@s\x20','subscribe','stringify','inputpermission\x20set\x20@s\x20movement\x20disabled','scData','2193513aUfzmS','typeId','title','filter','\x0a§aกำลังเก็บ'];_0x5e50=function(){return _0x2e8b55;};return _0x5e50();}var scData={};function saveData(){const _0x3f7ffb=_0xf0d2;world[_0x3f7ffb(0x189)](_0x3f7ffb(0x160),JSON[_0x3f7ffb(0x15e)](scData));}function loadData(){const _0x2a4601=_0xf0d2;let _0x192030=world['getDynamicProperty'](_0x2a4601(0x160));_0x192030&&(scData=JSON['parse'](_0x192030));}function _0xf0d2(_0x508f55,_0xd1e147){const _0x5e5070=_0x5e50();return _0xf0d2=function(_0xf0d27c,_0x3952dc){_0xf0d27c=_0xf0d27c-0x159;let _0x347aca=_0x5e5070[_0xf0d27c];return _0x347aca;},_0xf0d2(_0x508f55,_0xd1e147);}loadData(),world[_0x16e95d(0x197)]('overworld')['runCommand'](_0x16e95d(0x182)),world['getDimension'](_0x16e95d(0x18a))[_0x16e95d(0x17f)](_0x16e95d(0x167)),world[_0x16e95d(0x186)][_0x16e95d(0x174)][_0x16e95d(0x15d)](_0x51cfb9=>{const _0x2ce998=_0x16e95d;let _0x2d7754=_0x51cfb9[_0x2ce998(0x199)],_0x244e49=_0x51cfb9[_0x2ce998(0x16a)];if(_0x51cfb9[_0x2ce998(0x199)][_0x2ce998(0x162)]===_0x2ce998(0x183)&&!_0x51cfb9[_0x2ce998(0x199)][_0x2ce998(0x17a)]('collecting'))_0x51cfb9[_0x2ce998(0x181)]=!![],system['run'](()=>{const _0x493e36=_0x2ce998;_0x244e49[_0x493e36(0x17f)](_0x493e36(0x15f)),_0x2d7754['runCommand']('tag\x20@s\x20add\x20collecting'),_0x2d7754[_0x493e36(0x17f)](_0x493e36(0x192)+_0x244e49[_0x493e36(0x172)]+_0x493e36(0x19c)),_0x2d7754[_0x493e36(0x17f)](_0x493e36(0x18e)+_0x244e49[_0x493e36(0x172)]+_0x493e36(0x190)),_0x2d7754[_0x493e36(0x17f)](_0x493e36(0x18e)+_0x244e49[_0x493e36(0x172)]+_0x493e36(0x18c)),_0x2d7754[_0x493e36(0x17f)](_0x493e36(0x185)),_0x2d7754['runCommand'](_0x493e36(0x191)+_0x244e49['name']+_0x493e36(0x19c)),_0x244e49['runCommand'](_0x493e36(0x16d));});else _0x51cfb9[_0x2ce998(0x199)][_0x2ce998(0x162)]===_0x2ce998(0x183)&&_0x51cfb9[_0x2ce998(0x199)][_0x2ce998(0x17a)](_0x2ce998(0x175))&&(_0x244e49[_0x2ce998(0x198)](_0x2ce998(0x15a)),system['run'](()=>{const _0x3d793e=_0x2ce998;_0x244e49[_0x3d793e(0x17f)](_0x3d793e(0x16e));}));}),system[_0x16e95d(0x18f)](()=>{const _0x4503bd=_0x16e95d;let _0x152832=world[_0x4503bd(0x197)](_0x4503bd(0x18a))[_0x4503bd(0x19b)]()[_0x4503bd(0x164)](_0x60ba80=>_0x60ba80['typeId']==='b:scrap');_0x152832['forEach'](_0x564bd5=>{const _0xb37bb9=_0x4503bd;let _0x4ec036=getScore(_0xb37bb9(0x19a),_0x564bd5,!![]);_0x4ec036>0x0&&(_0x564bd5[_0xb37bb9(0x17f)]('scoreboard\x20players\x20remove\x20@s\x20cd_col\x201'),_0x564bd5[_0xb37bb9(0x17e)]='Cooldown:\x20'+(_0x4ec036-0x1)),_0x4ec036===0x0&&(_0x564bd5[_0xb37bb9(0x17e)]='พร้อมเก็บ',_0x564bd5[_0xb37bb9(0x17f)](_0xb37bb9(0x18b))),_0x564bd5['runCommand'](_0xb37bb9(0x169));});},0x14),system[_0x16e95d(0x18f)](()=>{const _0x2c3765=_0x16e95d;let _0x1c4b79=world[_0x2c3765(0x16f)]();_0x1c4b79[_0x2c3765(0x159)](_0xf3124e=>{const _0x563231=_0x2c3765;let _0x25ba29=getScore(_0x563231(0x178),_0xf3124e,!![]),_0x3e7560=Math['floor'](_0x25ba29/0xa*0x9),_0x446e87='§c'+'✦'['repeat'](0xa-_0x3e7560)+'§7'+'✦'[_0x563231(0x188)](_0x3e7560)+_0x563231(0x165);_0x25ba29>0x0&&(_0xf3124e['runCommand'](_0x563231(0x194)),_0xf3124e[_0x563231(0x17f)](_0x563231(0x15c)+scData['ms']+'\x20'+_0x446e87),_0xf3124e['runCommand']('playanimation\x20@s\x20animation.react_confirm_2\x20a\x201000'),_0xf3124e[_0x563231(0x17f)](_0x563231(0x173))),_0x25ba29===0x1&&(_0xf3124e['runCommand'](_0x563231(0x184)),_0xf3124e[_0x563231(0x17f)](_0x563231(0x19e)+scData['ms']+'\x20{\x22rawtext\x22:[{\x22text\x22:\x22§c✦✦✦✦✦✦✦✦✦✦\x0a§aเก็บสำเร็จ\x22}]}'),_0xf3124e[_0x563231(0x17f)](_0x563231(0x179)),_0xf3124e[_0x563231(0x17f)]('give\x20@s\x20b:scraps'));});},0xa);function getScore(_0x5e1d08,_0x615781,_0x14eb1b=!![]){const _0x155af0=_0x16e95d;try{const _0x54586a=world[_0x155af0(0x166)][_0x155af0(0x170)](_0x5e1d08);if(typeof _0x615781==_0x155af0(0x17b))return _0x54586a['getScore'](_0x54586a[_0x155af0(0x15b)]()['find'](_0x1ef02f=>_0x1ef02f['displayName']==_0x615781))??(_0x14eb1b?0x0:null);return _0x54586a[_0x155af0(0x177)](_0x615781['scoreboardIdentity'])??(_0x14eb1b?0x0:null);}catch{return _0x14eb1b?0x0:null;}}world[_0x16e95d(0x186)]['itemUse'][_0x16e95d(0x15d)](_0x2cf2c6=>{const _0x14ac18=_0x16e95d;let _0x47e160=_0x2cf2c6['itemStack'];if(_0x47e160[_0x14ac18(0x162)]===_0x14ac18(0x17d))config(_0x2cf2c6[_0x14ac18(0x193)]);});function config(_0x55c5be){system['run'](()=>{const _0xe4b62f=_0xf0d2;let _0x8dbe3=[_0xe4b62f(0x195),'Actionbar'];new ModalFormData()[_0xe4b62f(0x163)](_0xe4b62f(0x168))[_0xe4b62f(0x176)]('§eCreator:\x20Bamip1\x0a§9Discord:\x20@bigc8888\x0a§cYoutube:\x20Bigc\x20Genuis\x0a§bเลือกแสดงข้อความ',_0x8dbe3)['show'](_0x55c5be)[_0xe4b62f(0x18d)](_0x17127e=>{const _0x25a86c=_0xe4b62f;if(_0x17127e['canceled'])return;let _0x842850=_0x8dbe3[_0x17127e[_0x25a86c(0x171)][0x0]];scData={'ms':_0x842850},saveData(),_0x55c5be['sendMessage']('§aบันทึกข้อมูลสำเร็จ'),_0x55c5be[_0x25a86c(0x17f)]('playsound\x20random.orb');});});}
+import { world, system } from '@minecraft/server';
+import { ModalFormData } from '@minecraft/server-ui';
+
+var scData = {};
+
+function saveData() {
+    world.setDynamicProperty("scData", JSON.stringify(scData));
+}
+
+function loadData() {
+    let data = world.getDynamicProperty("scData");
+    if (data) {
+        scData = JSON.parse(data);
+    }
+}
+
+loadData();
+
+if (!scData.ms) {
+    scData.ms = "Title";
+    saveData();
+}
+world.getDimension('overworld').runCommand("scoreboard objectives add cd_col dummy");
+world.getDimension("overworld").runCommand("scoreboard objectives add coling dummy");
+
+world.beforeEvents.playerInteractWithEntity.subscribe(event => {
+    let target = event.target;
+    let player = event.player;
+
+    if (target.typeId === "b:scrap" && !target.hasTag('collecting')) {
+        event.cancel = true;
+        system.run(() => {
+            player.runCommand("inputpermission set @s movement disabled");
+            target.runCommand("tag @s add collecting");
+            target.runCommand(`tag @s add ${player.name}col`);
+            target.runCommand(`tp ${player.name} @s`);
+            target.runCommand(`tp ${player.name} ^^^-1`);
+            target.runCommand("scoreboard players set @s cd_col 30");
+            target.runCommand(`tag @s remove ${player.name}col`);
+            player.runCommand("scoreboard players set @s coling 10");
+        });
+    } else if (target.typeId === "b:scrap" && target.hasTag("collecting")) {
+        player.sendMessage("§cมีคนเก็บไปแล้ว");
+        system.run(() => {
+            player.runCommand("playsound random.break");
+        });
+    }
+});
+
+system.runInterval(() => {
+    let entities = world.getDimension("overworld").getEntities().filter(entity => entity.typeId === 'b:scrap');
+    entities.forEach(entity => {
+        let cooldown = getScore("cd_col", entity, true);
+        if (cooldown > 0) {
+            entity.runCommand("scoreboard players remove @s cd_col 1");
+            entity.nameTag = "Cooldown: " + (cooldown - 1);
+        }
+        if (cooldown === 0) {
+            entity.nameTag = 'พร้อมเก็บ';
+            entity.runCommand("tag @s remove collecting");
+        }
+        entity.runCommand("effect @s resistance 99999 255 true");
+    });
+}, 20);
+
+system.runInterval(() => {
+    let players = world.getAllPlayers();
+    players.forEach(player => {
+        let colingScore = getScore("coling", player, true);
+        let progress = Math.floor(colingScore / 10 * 9);
+        let progressBar = '§c' + '✦'.repeat(10 - progress) + '§7' + '✦'.repeat(progress) + "\n§aกำลังเก็บ";
+
+        if (colingScore > 0) {
+            player.runCommand("scoreboard players remove @s coling 1");
+            player.runCommand(`title @s ${scData.ms} ${progressBar}`);
+            player.runCommand("playanimation @s animation.react_confirm_2 a 1000");
+            player.runCommand("playsound random.pop2 @s ~~~15");
+        }
+        if (colingScore === 1) {
+            player.runCommand("inputpermission set @s movement enabled");
+            player.runCommand(`titleraw @s ${scData.ms} {"rawtext":[{"text":"§c✦✦✦✦✦✦✦✦✦✦\n§aเก็บสำเร็จ"}]}`);
+            player.runCommand("playsound random.orb @s ~~~10");
+            player.runCommand("give @s b:scraps");
+        }
+    });
+}, 10);
+//by Aitji Gamer
+function getScore(objectiveName, entity, defaultValue = true) {
+    try {
+        const objective = world.scoreboard.getObjective(objectiveName);
+        if (typeof entity == "string") {
+            return objective.getScore(objective.getParticipants().find(participant => participant.displayName == entity)) ?? (defaultValue ? 0 : null);
+        }
+        return objective.getScore(entity.scoreboardIdentity) ?? (defaultValue ? 0 : null);
+    } catch {
+        return defaultValue ? 0 : null;
+    }
+}
+
+world.beforeEvents.itemUse.subscribe(event => {
+    let item = event.itemStack;
+    if (item.typeId === "minecraft:gold_nugget") {
+        config(event.source);
+    }
+});
+
+function config(player) {
+    system.run(() => {
+        let options = ["Title", 'Actionbar'];
+        new ModalFormData()
+            .title("Scrap Addon")
+            .dropdown("§eCreator: Bamip1\n§9Discord: @bigc8888\n§cYoutube: Bigc Genuis\n§bเลือกแสดงข้อความ", options)
+            .show(player)
+            .then(response => {
+                if (response.canceled) {
+                    return;
+                }
+                let selectedOption = options[response.formValues[0]];
+                scData = { 'ms': selectedOption };
+                saveData();
+                player.sendMessage('§aบันทึกข้อมูลสำเร็จ');
+                player.runCommand("playsound random.orb");
+            });
+    });
+}

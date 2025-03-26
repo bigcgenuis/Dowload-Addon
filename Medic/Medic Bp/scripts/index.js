@@ -1,1 +1,175 @@
-const _0x4c0088=_0x1de0;(function(_0x3d0b02,_0x1e9809){const _0x361748=_0x1de0,_0x23ab1a=_0x3d0b02();while(!![]){try{const _0x393e3e=parseInt(_0x361748(0xbc))/0x1*(parseInt(_0x361748(0xc8))/0x2)+parseInt(_0x361748(0x93))/0x3+-parseInt(_0x361748(0xc2))/0x4*(-parseInt(_0x361748(0xac))/0x5)+-parseInt(_0x361748(0xb4))/0x6+parseInt(_0x361748(0xbd))/0x7+parseInt(_0x361748(0xe2))/0x8+parseInt(_0x361748(0xb0))/0x9*(-parseInt(_0x361748(0x91))/0xa);if(_0x393e3e===_0x1e9809)break;else _0x23ab1a['push'](_0x23ab1a['shift']());}catch(_0x460f43){_0x23ab1a['push'](_0x23ab1a['shift']());}}}(_0x20ea,0x5d42a));import{world,system}from'@minecraft/server';import{ActionFormData,ModalFormData}from'@minecraft/server-ui';let medicData={};function _0x1de0(_0x2ba5a1,_0x2e7ecf){const _0x20eaa9=_0x20ea();return _0x1de0=function(_0x1de06f,_0x762e67){_0x1de06f=_0x1de06f-0x8d;let _0x460841=_0x20eaa9[_0x1de06f];return _0x460841;},_0x1de0(_0x2ba5a1,_0x2e7ecf);}function saveData(){const _0x4ce3e4=_0x1de0;world['setDynamicProperty'](_0x4ce3e4(0xba),JSON[_0x4ce3e4(0xda)](medicData));}function loadData(){const _0x326866=_0x1de0;let _0x4e1206=world[_0x326866(0x94)](_0x326866(0xba));_0x4e1206&&(medicData=JSON[_0x326866(0x8f)](_0x4e1206));}loadData(),world[_0x4c0088(0xc3)](_0x4c0088(0xaa))['runCommand'](_0x4c0088(0xad)),world['getDimension'](_0x4c0088(0xaa))[_0x4c0088(0xae)](_0x4c0088(0xd0)),world[_0x4c0088(0xaf)]['entityDie'][_0x4c0088(0x96)](_0x774546=>{const _0x4af059=_0x4c0088;!_0x774546[_0x4af059(0xd1)]['hasTag']('d')&&!_0x774546[_0x4af059(0xd1)][_0x4af059(0xe4)](_0x4af059(0xa3))&&(_0x774546[_0x4af059(0xd1)][_0x4af059(0xcf)]('d'),_0x774546['deadEntity'][_0x4af059(0xae)](_0x4af059(0xcc)+medicData[_0x4af059(0x98)]),tp(_0x774546[_0x4af059(0xd1)]));}),world['beforeEvents'][_0x4c0088(0xc4)][_0x4c0088(0x96)](_0x302016=>{const _0x603c48=_0x4c0088;let _0x3982cd=_0x302016[_0x603c48(0xdb)];_0x3982cd[_0x603c48(0xd7)]===_0x603c48(0xc7)&&main(_0x302016[_0x603c48(0xa7)]);});function tp(_0x6a56ec){system['runTimeout'](()=>{const _0x4ab16a=_0x1de0;_0x6a56ec[_0x4ab16a(0xae)](_0x4ab16a(0xb5)+medicData['cos']);},0x14);}function main(_0x2d19d0){const _0x2a6328=_0x4c0088;system[_0x2a6328(0xb9)](()=>{const _0x41ec28=_0x2a6328;if(_0x2d19d0['hasTag'](_0x41ec28(0x8d))){let _0x40a963=['เลือกจำพวกข้อความ',_0x41ec28(0xc5),_0x41ec28(0xca)];new ModalFormData()['title']('§5Medic\x20Addon')['dropdown'](_0x41ec28(0x92),_0x40a963)['textField'](_0x41ec28(0xb8),_0x41ec28(0xd9))[_0x41ec28(0x9b)](_0x41ec28(0xc0),_0x41ec28(0xe5))[_0x41ec28(0x9b)]('§gเงินที่หมอได้รับ\x20และผู้ตายจะเสีย\x20เวลาชุบ',_0x41ec28(0xd5))[_0x41ec28(0xcb)](_0x2d19d0)[_0x41ec28(0x97)](_0x16ca76=>{const _0x2ea946=_0x41ec28;if(!_0x16ca76[_0x2ea946(0xdd)]){let _0x176396=_0x40a963[_0x16ca76[_0x2ea946(0xbe)][0x0]],_0x598e27=_0x16ca76['formValues'][0x1],_0x589a9f=_0x16ca76['formValues'][0x2],_0xca70a2=_0x16ca76[_0x2ea946(0xbe)][0x3];medicData['sel']=_0x176396,medicData[_0x2ea946(0x98)]=_0x598e27,medicData[_0x2ea946(0xa9)]=_0x589a9f,medicData['mo']=_0xca70a2,saveData(),_0x2d19d0[_0x2ea946(0xa0)](_0x2ea946(0xa8)+_0x598e27+_0x2ea946(0xbb)+_0x589a9f+'\x0a§cเงิน:\x20§a'+_0xca70a2),_0x2d19d0[_0x2ea946(0xae)]('playsound\x20random.orb');}});}});}world['beforeEvents']['chatSend'][_0x4c0088(0x96)](_0x41de5b=>{const _0x254e61=_0x4c0088;_0x41de5b[_0x254e61(0xb1)]===_0x254e61(0xab)&&(_0x41de5b[_0x254e61(0xe0)]=!![],cpr(_0x41de5b[_0x254e61(0xdf)]));});function cpr(_0x1b663e){const _0x15715f=_0x4c0088;system[_0x15715f(0xd4)](()=>{const _0x3a429a=_0x15715f;let _0xefdf85=new ActionFormData();_0xefdf85[_0x3a429a(0xc5)](_0x3a429a(0xd3)),_0xefdf85[_0x3a429a(0xb6)](_0x3a429a(0x9f));let _0x3f561d=[_0x3a429a(0x9a),_0x3a429a(0xa4)],_0x37c1ac=_0x3f561d[Math['floor'](Math[_0x3a429a(0xa6)]()*_0x3f561d[_0x3a429a(0x8e)])],_0x1da111=world[_0x3a429a(0xe9)]()[_0x3a429a(0xe1)](_0x5bf1c6=>_0x5bf1c6[_0x3a429a(0xe4)]('de'));_0x1da111[_0x3a429a(0x8e)]>0x0?_0x1da111[_0x3a429a(0x9d)](_0x13b00d=>{const _0x5da3ab=_0x3a429a;_0xefdf85[_0x5da3ab(0xde)](_0x13b00d['name'],'textures/ui/'+_0x37c1ac);}):_0xefdf85[_0x3a429a(0xde)](_0x3a429a(0xbf),'textures/ui/redX1'),_0xefdf85[_0x3a429a(0xcb)](_0x1b663e)[_0x3a429a(0x97)](_0x2f5db9=>{const _0x41dc78=_0x3a429a;if(_0x2f5db9[_0x41dc78(0xdc)]!==undefined&&_0x1da111[_0x41dc78(0x8e)]>0x0){let _0x2d3db7=_0x1da111[_0x2f5db9['selection']];_0x1b663e[_0x41dc78(0xae)](_0x41dc78(0xb7)+medicData['mo']),_0x2d3db7[_0x41dc78(0xae)](_0x41dc78(0xb3)+medicData['mo']),_0x1b663e[_0x41dc78(0xa0)]('§a+'+medicData['mo']+_0x41dc78(0xa5)+_0x2d3db7[_0x41dc78(0xc6)]),_0x2d3db7[_0x41dc78(0xa0)](_0x41dc78(0xa2)+medicData['mo']+_0x41dc78(0xe8)+_0x1b663e[_0x41dc78(0xc6)]),_0x2d3db7[_0x41dc78(0xd8)]('d'),_0x2d3db7[_0x41dc78(0xd8)]('de'),_0x1b663e[_0x41dc78(0xae)](_0x41dc78(0xcd)),_0x2d3db7['runCommand'](_0x41dc78(0xcd)),_0x2d3db7[_0x41dc78(0xae)](_0x41dc78(0xd2));}});},0x14);}system[_0x4c0088(0xc1)](()=>{const _0x19447a=_0x4c0088;world[_0x19447a(0xe9)]()[_0x19447a(0x9d)](_0x5c5b58=>{const _0x1000b1=_0x19447a;_0x5c5b58['hasTag']('d')&&(_0x5c5b58[_0x1000b1(0xa0)](_0x1000b1(0x9c)),_0x5c5b58[_0x1000b1(0xae)]('tellraw\x20@a[tag=medic]\x20{\x22rawtext\x22:[{\x22text\x22:\x22§dมีคนต้องการความช่วยเหลือที่โรงพยาบาล\x22}]}'));});},0x78),system[_0x4c0088(0xc1)](()=>{const _0x49f392=_0x4c0088;let _0x5b3f92=world[_0x49f392(0xe9)](),_0x313433=_0x5b3f92[_0x49f392(0xe1)](_0x13db98=>_0x13db98['hasTag'](_0x49f392(0xa3)));_0x5b3f92[_0x49f392(0x9d)](_0x29bec1=>{const _0x3b51b8=_0x49f392;let _0x278adb=getScore(_0x3b51b8(0xce),_0x29bec1,!![]);_0x313433[_0x3b51b8(0x8e)]>0x0&&_0x29bec1['hasTag']('d')&&(_0x29bec1[_0x3b51b8(0xae)]('scoreboard\x20players\x20remove\x20@s\x20wait\x201'),_0x29bec1[_0x3b51b8(0xae)]('title\x20@s\x20'+medicData[_0x3b51b8(0xe3)]+'\x20§cกำลังรอเกิดใน§f:\x20§b'+(_0x278adb-0x1)));});},0x14),system['runInterval'](()=>{const _0x5a49ed=_0x4c0088;let _0x3cebbf=world[_0x5a49ed(0xe9)](),_0x1014c1=_0x3cebbf[_0x5a49ed(0xe1)](_0x232223=>_0x232223[_0x5a49ed(0xe4)](_0x5a49ed(0xa3)));_0x3cebbf[_0x5a49ed(0x9d)](_0x52f6a7=>{const _0x14a8ac=_0x5a49ed;let _0x593e00=getScore('wait',_0x52f6a7,!![]);_0x52f6a7[_0x14a8ac(0xe4)](_0x14a8ac(0xa3))&&(_0x52f6a7[_0x14a8ac(0xae)]('tag\x20@a[r=5,tag=d,tag=!medic]\x20add\x20de'),_0x52f6a7[_0x14a8ac(0xae)](_0x14a8ac(0x9e))),_0x52f6a7['hasTag']('d')&&(_0x52f6a7[_0x14a8ac(0xae)](_0x14a8ac(0xb2)),_0x52f6a7['runCommand'](_0x14a8ac(0x90))),_0x1014c1['length']<0x1&&_0x52f6a7[_0x14a8ac(0xae)](_0x14a8ac(0x95)),_0x593e00===0x0&&_0x52f6a7['hasTag']('d')&&(_0x52f6a7[_0x14a8ac(0xae)]('tag\x20@s\x20remove\x20d'),_0x52f6a7['runCommand'](_0x14a8ac(0xc9)),_0x52f6a7[_0x14a8ac(0xae)](_0x14a8ac(0xb3)+medicData['mo']),_0x52f6a7[_0x14a8ac(0xa0)](_0x14a8ac(0xa2)+medicData['mo']+_0x14a8ac(0xa1)),_0x52f6a7[_0x14a8ac(0xae)]('inputpermission\x20set\x20@s\x20movement\x20enabled'));});});function _0x20ea(){const _0x17dfd3=['8926uYBWoy','tag\x20@s\x20remove\x20de','actionbar','show','scoreboard\x20players\x20set\x20@s\x20wait\x20','playsound\x20random.orb','wait','addTag','gamerule\x20doimmediaterespawn\x20true','deadEntity','inputpermission\x20set\x20@s\x20movement\x20enabled','§5Medic\x20Addon','runTimeout','เช่น:\x20500','getScore','typeId','removeTag','เช่น:\x20300','stringify','itemStack','selection','canceled','button','sender','cancel','filter','1856496JnDxJP','sel','hasTag','เช่น\x201\x20-60\x201','getObjective','find','$\x20คุณได้ถูกชุบจากหมอ\x20§a','getAllPlayers','Admin','length','parse','effect\x20@s\x20instant_health\x202\x20255\x20true','6504490zgIrEQ','§b[\x0a§eCreator:\x20§aBamip1\x0a§cYoutube:\x20Bigc\x20Genuis\x0a§9Discord:\x20@bigc888\x0a§tFacebook:\x20Bigc\x20Genuis\x27s\x0a§9Community\x20Discord:\x20https://discord.gg/Ncw7hEW6BW§b\x0a]\x0a§gเลือกจำพวกข้อความ','2260977rtubKc','getDynamicProperty','scoreboard\x20players\x20set\x20@a[tag=d]\x20wait\x200','subscribe','then','retime','string','icon_alex','textField','§cคุณได้ตายต้องรอหมอมาชุบ','forEach','tag\x20@a[rm=5,tag=d,tag=!medic]\x20remove\x20de','กรุณาเลือกคนที่ต้องการชุบ','sendMessage','$\x20คุณได้เกิดอัตโนมัติ','§c-','medic','icon_steve','$\x20คุณได้ชุบ\x20§c','random','source','§cเวลารอเกิด:\x20§a','cos','overworld','cpr','22855PcruGl','scoreboard\x20objectives\x20add\x20wait\x20dummy','runCommand','afterEvents','9CbceKk','message','inputpermission\x20set\x20@s\x20movement\x20disabled','scoreboard\x20players\x20remove\x20@s\x20money\x20','3656718Bwjtmh','tp\x20@s\x20','body','scoreboard\x20players\x20add\x20@s\x20money\x20','§gกำหนดเวลาตอนตายแล้วจะเกิดเอง','run','medicData','\x0a§cพิกัดโรงพยาบาล:\x20§a','79JOfmdE','237363TVlRHS','formValues','§cไม่มีคนตายใกล้คุณ','§gพิกัดโรงพยาบาลตอนตาย','runInterval','236ZwYGlo','getDimension','itemUse','title','name','minecraft:feather'];_0x20ea=function(){return _0x17dfd3;};return _0x20ea();}function getScore(_0x3c8b68,_0x8c5665,_0x2d6430=!![]){const _0x2e246d=_0x4c0088;try{let _0x303f14=world['scoreboard'][_0x2e246d(0xe6)](_0x3c8b68);if(typeof _0x8c5665==_0x2e246d(0x99))return _0x303f14[_0x2e246d(0xd6)](_0x303f14['getParticipants']()[_0x2e246d(0xe7)](_0x5bdc2e=>_0x5bdc2e['displayName']==_0x8c5665))??0x0;return _0x303f14[_0x2e246d(0xd6)](_0x8c5665['scoreboardIdentity'])??0x0;}catch{return 0x0;}}
+import { world, system } from '@minecraft/server';
+import { ActionFormData, ModalFormData } from '@minecraft/server-ui';
+
+let medicData = {};
+
+function saveData() {
+    system.run(() => {
+        world.setDynamicProperty("medicData", JSON.stringify(medicData));
+    })
+}
+
+function loadData() {
+    system.run(() => {
+        let data = world.getDynamicProperty("medicData");
+        if (data) {
+            medicData = JSON.parse(data);
+        }
+    });
+}
+
+loadData();
+system.run(() => {
+    world.getDimension("overworld").runCommand("scoreboard objectives add wait dummy");
+    world.getDimension("overworld").runCommand("gamerule doimmediaterespawn true");
+})
+
+
+world.afterEvents.entityDie.subscribe(event => {
+    if (!event.deadEntity.hasTag('d') && !event.deadEntity.hasTag("medic")) {
+        event.deadEntity.addTag('d');
+        event.deadEntity.runCommand("scoreboard players set @s wait " + medicData.retime);
+        teleport(event.deadEntity);
+    }
+});
+
+world.beforeEvents.itemUse.subscribe(event => {
+    let item = event.itemStack;
+    if (item.typeId === "minecraft:feather") {
+        main(event.source);
+    }
+});
+
+function teleport(entity) {
+    system.runTimeout(() => {
+        entity.runCommand("tp @s " + medicData.cos);
+    }, 20);
+}
+
+function main(player) {
+    system.run(() => {
+        if (player.hasTag("Admin")) {
+            let messageTypes = ['เลือกจำพวกข้อความ', "title", "actionbar"];
+            new ModalFormData()
+                .title("§5Medic Addon")
+                .dropdown("§eCreator: §aBamip1\n§gเลือกจำพวกข้อความ", messageTypes)
+                .textField("§gกำหนดเวลาตอนตายแล้วจะเกิดเอง", "เช่น: 300")
+                .textField("§gพิกัดโรงพยาบาลตอนตาย", "เช่น 1 -60 1")
+                .textField("§gเงินที่หมอได้รับ และผู้ตายจะเสีย เวลาชุบ", "เช่น: 500")
+                .show(player)
+                .then(response => {
+                    if (!response.canceled) {
+                        let selectedMessageType = messageTypes[response.formValues[0]];
+                        let respawnTime = response.formValues[1];
+                        let hospitalCoordinates = response.formValues[2];
+                        let money = response.formValues[3];
+                        medicData.sel = selectedMessageType;
+                        medicData.retime = respawnTime;
+                        medicData.cos = hospitalCoordinates;
+                        medicData.mo = money;
+                        saveData();
+                        player.sendMessage("§cเวลารอเกิด: §a" + respawnTime + "\n§cพิกัดโรงพยาบาล: §a" + hospitalCoordinates + "\n§cเงิน: §a" + money);
+                        player.runCommand("playsound random.orb");
+                    }
+                });
+        }
+    });
+}
+
+world.beforeEvents.chatSend.subscribe(event => {
+    if (event.message === "cpr") {
+        event.cancel = true;
+        cpr(event.sender);
+    }
+});
+
+function cpr(player) {
+    system.runTimeout(() => {
+        let form = new ActionFormData();
+        form.title("§5Medic Addon");
+        form.body("กรุณาเลือกคนที่ต้องการชุบ");
+        let icons = ["icon_alex", "icon_steve"];
+        let randomIcon = icons[Math.floor(Math.random() * icons.length)];
+        let deadPlayers = world.getAllPlayers().filter(p => p.hasTag('de'));
+        if (deadPlayers.length > 0) {
+            deadPlayers.forEach(deadPlayer => {
+                form.button(deadPlayer.name, 'textures/ui/' + randomIcon);
+            });
+        } else {
+            form.button("§cไม่มีคนตายใกล้คุณ", 'textures/ui/redX1');
+        }
+        form.show(player).then(response => {
+            if (response.selection !== undefined && deadPlayers.length > 0) {
+                let selectedPlayer = deadPlayers[response.selection];
+                player.runCommand("scoreboard players add @s money " + medicData.mo);
+                selectedPlayer.runCommand("scoreboard players remove @s money " + medicData.mo);
+                player.sendMessage('§a+' + medicData.mo + "$ คุณได้ชุบ §c" + selectedPlayer.name);
+                selectedPlayer.sendMessage("§c-" + medicData.mo + "$ คุณได้ถูกชุบจากหมอ §a" + player.name);
+                selectedPlayer.removeTag('d');
+                selectedPlayer.removeTag('de');
+                player.runCommand("playsound random.orb");
+                selectedPlayer.runCommand("playsound random.orb");
+                selectedPlayer.runCommand("inputpermission set @s movement enabled");
+            }
+        });
+    }, 20);
+}
+
+system.runInterval(() => {
+    world.getAllPlayers().forEach(player => {
+        if (player.hasTag('d')) {
+            player.sendMessage("§cคุณได้ตายต้องรอหมอมาชุบ");
+            player.runCommand("tellraw @a[tag=medic] {\"rawtext\":[{\"text\":\"§dมีคนต้องการความช่วยเหลือที่โรงพยาบาล\"}]}");
+        }
+    });
+}, 120);
+
+system.runInterval(() => {
+    let players = world.getAllPlayers();
+    let medics = players.filter(player => player.hasTag("medic"));
+    players.forEach(player => {
+        let waitScore = getScore("wait", player, true);
+        if (medics.length > 0 && player.hasTag('d')) {
+            player.runCommand("scoreboard players remove @s wait 1");
+            player.runCommand("title @s " + medicData.sel + " §cกำลังรอเกิดใน§f: §b" + (waitScore - 1));
+        }
+    });
+}, 20);
+
+system.runInterval(() => {
+    let players = world.getAllPlayers();
+    let medics = players.filter(player => player.hasTag("medic"));
+    players.forEach(player => {
+        let waitScore = getScore('wait', player, true);
+        if (player.hasTag("medic")) {
+            player.runCommand("tag @a[r=5,tag=d,tag=!medic] add de");
+            player.runCommand("tag @a[rm=5,tag=d,tag=!medic] remove de");
+        }
+        if (player.hasTag('d')) {
+            player.runCommand("inputpermission set @s movement disabled");
+            player.runCommand("effect @s instant_health 2 255 true");
+        }
+        if (medics.length < 1) {
+            player.runCommand("scoreboard players set @a[tag=d] wait 0");
+        }
+        if (waitScore === 0 && player.hasTag('d')) {
+            player.runCommand("tag @s remove d");
+            player.runCommand("tag @s remove de");
+            player.runCommand("scoreboard players remove @s money " + medicData.mo);
+            player.sendMessage("§c-" + medicData.mo + "$ คุณได้เกิดอัตโนมัติ");
+            player.runCommand("inputpermission set @s movement enabled");
+        }
+    });
+});
+//By Aitji Gamer
+function getScore(objectiveName, entity, isPlayer = true) {
+    try {
+        let objective = world.scoreboard.getObjective(objectiveName);
+        if (typeof entity == "string") {
+            return objective.getScore(objective.getParticipants().find(participant => participant.displayName == entity)) ?? 0;
+        }
+        return objective.getScore(entity.scoreboardIdentity) ?? 0;
+    } catch {
+        return 0;
+    }
+}

@@ -2,9 +2,14 @@ import { ActionFormData, ModalFormData } from "@minecraft/server-ui"
 import { getVehicle, getVehicles, getVehiclesSpawned } from "../Function/MainFunctionVehicle";
 import { saveData, loadData } from "../../database/oldDB";
 import { scoreboard } from "../../minecraft/cmd"
-import { world } from "@minecraft/server";
+import { system, world } from "@minecraft/server";
+saveData("Test", { test: "ห" });
+system.run(async () => {
+    const data = await loadData("Test");
+    world.sendMessage(`${JSON.stringify(data)}`);
+});
 
-let vehicleData = loadData("vehicleData");
+let vehicleData = loadData("vehicleData") || {};
 
 let Vehicle = {
     spawn_vehicle: (player) => {
@@ -116,29 +121,46 @@ let AdminMenu = {
         form.button(`View vehicles of player`, `textures/ui/realmsStoriesIcon`);
         return form;
     },
-    AddVehicle: (player) => {
+    AddVehicle(player) {
         let form = new ModalFormData();
         form.title(`เพิ่มรถ`);
         form.textField(`ID รถ`, `เช่น: minecraft:pig`);
         form.textField(`ใส่ชื่อโชว์`, `เช่น: หมู`);
         form.textField(`แท็กที่ต้องใช้ (ผู้เล่น)`, `เช่น: pigcar`);
-        form.show(player).then(r => {
+        
+        form.show(player).then(async r => {
             if (r.canceled) return;
-            let vehicleId = r.formValues[0];
-            let vehicleName = r.formValues[1];
-            let playerTag = r.formValues[2];
+    
+            let vehicleId = r.formValues[0]?.trim();
+            let vehicleName = r.formValues[1]?.trim();
+            let playerTag = r.formValues[2]?.trim();
+    
+            if (!vehicleId || !vehicleName || !playerTag) {
+                player.sendMessage(`§cกรุณากรอกข้อมูลให้ครบ`);
+                return;
+            }
+    
+            let vehicleData = await loadData("vehicleData");
+    
+            if (vehicleData[vehicleId]) {
+                player.sendMessage(`§cรถที่มี ID ${vehicleId} มีอยู่แล้ว`);
+                return;
+            }
+    
             vehicleData[vehicleId] = {
                 displayName: vehicleName,
                 requiredTag: playerTag,
                 owner: player.name
             };
+    
+            saveData("vehicleData", vehicleData);
+    
             player.sendMessage(`§aเพิ่ม: §c${vehicleName} §aสำเร็จ`);
             player.runCommand(`playsound random.orb`);
-            saveData("vehicleData", vehicleData);
         });
-    },
-    RemoveVehicle: (player) => {
-        let vehicles = getVehicle(player);
+    },  
+    RemoveVehicle: async (player) => {
+        let vehicles = await getVehicle(player);
         if (vehicles.length === 0) {
             player.sendMessage(`§cไม่พบรถในข้อมูล`);
             player.runCommand(`playsound note.bass`);
@@ -156,7 +178,7 @@ let AdminMenu = {
             player.sendMessage(`§aลบรถ §c${selectedCar.displayName} §aเรียบร้อยแล้ว`);
             player.runCommand(`playsound random.orb`);
         });
-    },
+    },    
     CheckVehicles: (player) => {
         let loadedVehicleData = loadData("vehicleData");
         let players = Array.from(new Set(Object.values(loadedVehicleData).map(vehicle => vehicle.owner)))
