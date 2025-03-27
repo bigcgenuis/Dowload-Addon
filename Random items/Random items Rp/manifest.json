@@ -1,0 +1,30 @@
+{
+  "format_version": 1,
+  "header": {
+    "description": "Versions 0.0.2 By.Bamip1",
+    "name": "Random items",
+    "uuid": "73851cba-129b-4053-8255-2bd57f61fc0e",
+    "version": [
+      0,
+      0,
+      1
+    ],
+    "min_engine_version": [
+      1,
+      8,
+      0
+    ]
+  },
+  "modules": [
+    {
+      "description": "Versions 0.0.2 By.Bamip1",
+      "type": "resources",
+      "uuid": "31c8ba82-401f-42b8-8a50-72341e04e213",
+      "version": [
+        0,
+        0,
+        1
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "resource_pack_name": "vanilla",
+  "texture_name": "atlas.items",
+  "texture_data": {
+    "b:po": {
+      "textures": "textures/items/pamobile/b_po"
+    },
+    "b:poon": {
+      "textures": "textures/items/pamobile/b_poon"
+    },
+    "dragon_breath": {
+    "textures": "textures/ui/gear"
+    },
+    "shulker_shell": {
+      "textures": "textures/ui/icon_random"
+    }
+  }
+}

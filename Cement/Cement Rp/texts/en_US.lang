@@ -1,0 +1,5 @@
+item.b:po.name=ปูน
+item.spawn_egg.entity.b:poon.name=Spawn กองปูน
+entity.b:poon.name=กองปูน
+item.dragon_breath.name=§bStart §c& §aConfig§r
+item.shulker_shell.name=§bReset§r

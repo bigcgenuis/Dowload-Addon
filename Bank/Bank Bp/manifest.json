@@ -1,0 +1,53 @@
+{
+	"format_version": 2,
+	"header": {
+		"name": "Bank Addon",
+		"description": "Versions 0.0.1 By.Bamip1",
+		"uuid": "06fbd055-36d9-4c23-9ec4-1d2b741e767d",
+		"version": [
+			0,
+			0,
+			1
+		],
+		"min_engine_version": [
+			1,
+			18,
+			0
+		]
+	},
+	"modules": [
+		{
+			"type": "data",
+			"uuid": "34ed3edc-44d8-400e-8d18-12f6a5cbe50d",
+			"version": [
+				0,
+				0,
+				1
+			]
+		},
+		{
+			"type": "script",
+			"language": "javascript",
+			"entry": "scripts/index.js",
+			"uuid": "a9c0cc84-5d47-4db3-8d27-0ca692197fdf",
+			"version": "1.1.0"
+		}
+	],
+	"metadata": {
+		"authors": [
+			"Bamip1"
+		]
+	},
+	"dependencies": [
+		{
+			"description": "@minecraft/server module dependency",
+			"module_name": "@minecraft/server",
+			"version": "1.16.0-beta"
+		},
+		{
+			"description": "@minecraft/server-ui module dependency",
+			"module_name": "@minecraft/server-ui",
+			"version": "1.2.0"
+		}
+	]
+}

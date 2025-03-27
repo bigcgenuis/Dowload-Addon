@@ -1,0 +1,13 @@
+{
+  "format_version": "1.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "b:po",
+      "category": "Equipment"
+    },
+    "components": {
+      "minecraft:icon": "b:po",
+      "minecraft:render_offsets": "miscellaneous"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+	"texture_data": {
+		"b:random": {
+			"textures": "textures/items/gold_ingot"
+		},
+		"brick": {
+			"textures": "textures/ui/icon_potion"
+		}
+	}
+}

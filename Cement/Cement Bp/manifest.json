@@ -1,0 +1,53 @@
+{
+	"format_version": 2,
+	"header": {
+		"name": "Cement",
+		"description": "Versions 0.0.1 By.Bamip1",
+		"uuid": "d413d853-bf4e-4d62-ba25-64356b086160",
+		"version": [
+			1,
+			1,
+			0
+		],
+		"min_engine_version": [
+			1,
+			18,
+			0
+		]
+	},
+	"modules": [
+		{
+			"type": "data",
+			"uuid": "3b481d2e-5f8d-4432-91c4-f78f55dd9544",
+			"version": [
+				0,
+				0,
+				1
+			]
+		},
+		{
+			"type": "script",
+			"language": "javascript",
+			"entry": "scripts/index.js",
+			"uuid": "d92b88bc-7c0a-4337-b81e-21262728223a",
+			"version": "1.1.0"
+		}
+	],
+	"metadata": {
+		"authors": [
+			"Bamip1"
+		]
+	},
+	"dependencies": [
+		{
+			"description": "@minecraft/server module dependency",
+			"module_name": "@minecraft/server",
+			"version": "1.14.0"
+		},
+		{
+			"description": "@minecraft/server-ui module dependency",
+			"module_name": "@minecraft/server-ui",
+			"version": "1.2.0"
+		}
+	]
+}

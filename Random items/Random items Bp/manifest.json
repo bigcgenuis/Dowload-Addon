@@ -1,0 +1,53 @@
+{
+	"format_version": 2,
+	"header": {
+		"name": "Random items",
+		"description": "Versions 0.0.2 By.Bamip1",
+		"uuid": "56f0d3e3-48e3-4208-b6c1-99f3d79bb3c5",
+		"version": [
+			0,
+			0,
+			2
+		],
+		"min_engine_version": [
+			1,
+			18,
+			0
+		]
+	},
+	"modules": [
+		{
+			"type": "data",
+			"uuid": "3484f4b9-6479-4e94-836f-a5430f70836b",
+			"version": [
+				0,
+				0,
+				1
+			]
+		},
+		{
+			"type": "script",
+			"language": "javascript",
+			"entry": "scripts/index.js",
+			"uuid": "dd7741d3-fa7b-4d40-a612-44128beaee7e",
+			"version": "1.1.0"
+		}
+	],
+	"metadata": {
+		"authors": [
+			"Bamip1"
+		]
+	},
+	"dependencies": [
+		{
+			"description": "@minecraft/server module dependency",
+			"module_name": "@minecraft/server",
+			"version": "1.14.0"
+		},
+		{
+			"description": "@minecraft/server-ui module dependency",
+			"module_name": "@minecraft/server-ui",
+			"version": "1.2.0"
+		}
+	]
+}
