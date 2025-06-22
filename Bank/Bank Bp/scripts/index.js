@@ -1,1 +1,98 @@
-const _0x394faf=_0x3db6;(function(_0xe2f997,_0x11ba03){const _0x2b16fe=_0x3db6,_0x525cfd=_0xe2f997();while(!![]){try{const _0x333f46=parseInt(_0x2b16fe(0x15d))/0x1+parseInt(_0x2b16fe(0x18d))/0x2*(-parseInt(_0x2b16fe(0x16f))/0x3)+parseInt(_0x2b16fe(0x16a))/0x4*(parseInt(_0x2b16fe(0x171))/0x5)+parseInt(_0x2b16fe(0x188))/0x6+-parseInt(_0x2b16fe(0x160))/0x7+parseInt(_0x2b16fe(0x15c))/0x8+-parseInt(_0x2b16fe(0x178))/0x9;if(_0x333f46===_0x11ba03)break;else _0x525cfd['push'](_0x525cfd['shift']());}catch(_0x3e87f5){_0x525cfd['push'](_0x525cfd['shift']());}}}(_0x3e05,0xa9ca2));import{world,system}from'@minecraft/server';import{ActionFormData,ModalFormData,MessageFormData}from'@minecraft/server-ui';function _0x3db6(_0x457101,_0x211877){const _0x3e0534=_0x3e05();return _0x3db6=function(_0x3db6ca,_0x1b29a5){_0x3db6ca=_0x3db6ca-0x149;let _0x2617b4=_0x3e0534[_0x3db6ca];return _0x2617b4;},_0x3db6(_0x457101,_0x211877);}var bankData={};function saveData(){const _0x35b8fd=_0x3db6;world[_0x35b8fd(0x15b)](_0x35b8fd(0x17f),JSON[_0x35b8fd(0x187)](bankData));}function loadData(){const _0x4cff9a=_0x3db6;let _0x14d59b=world['getDynamicProperty']('bankData');_0x14d59b?bankData=JSON[_0x4cff9a(0x185)](_0x14d59b):(bankData={'pe':0x1,'se':0xe10},saveData());}loadData(),world[_0x394faf(0x196)]('overworld')[_0x394faf(0x18a)](_0x394faf(0x15f)),world[_0x394faf(0x196)]('overworld')['runCommand'](_0x394faf(0x168)),world['getDimension']('overworld')[_0x394faf(0x18a)](_0x394faf(0x182));function getScore(_0x56fd3a,_0x5ce32e,_0x14764f=!![]){const _0x12b0bc=_0x394faf;try{const _0x53b99d=world[_0x12b0bc(0x16c)][_0x12b0bc(0x164)](_0x56fd3a);if(typeof _0x5ce32e==_0x12b0bc(0x189))return _0x53b99d['getScore'](_0x53b99d[_0x12b0bc(0x179)]()['find'](_0x4aa9c8=>_0x4aa9c8['displayName']==_0x5ce32e))??(_0x14764f?0x0:null);return _0x53b99d[_0x12b0bc(0x184)](_0x5ce32e['scoreboardIdentity'])??(_0x14764f?0x0:null);}catch{return _0x14764f?0x0:null;}}world[_0x394faf(0x156)]['playerInteractWithEntity'][_0x394faf(0x193)](_0x5e1eb9=>{const _0x2947a7=_0x394faf;_0x5e1eb9['target'][_0x2947a7(0x157)](_0x2947a7(0x16d))&&(_0x5e1eb9['cancel']=!![],bank(_0x5e1eb9[_0x2947a7(0x14a)]));});function bank(_0x141d9f){const _0x595aaa=_0x394faf;system[_0x595aaa(0x17d)](()=>{const _0x499745=_0x595aaa;new ActionFormData()['title'](_0x499745(0x149))['body'](_0x499745(0x199))[_0x499745(0x14d)](_0x499745(0x162),'textures/ui/jump_pressed')[_0x499745(0x14d)](_0x499745(0x172),'textures/ui/sneak_pressed')[_0x499745(0x14d)]('Total',_0x499745(0x19d))[_0x499745(0x183)](_0x141d9f)[_0x499745(0x19c)](_0x56ee81=>{const _0x5e2e44=_0x499745;if(_0x56ee81['selection']===0x0)deposit(_0x141d9f);if(_0x56ee81['selection']===0x1)withdraw(_0x141d9f);if(_0x56ee81[_0x5e2e44(0x17e)]===0x2)total(_0x141d9f);});});}function deposit(_0x26137c){const _0x3902fa=_0x394faf;system[_0x3902fa(0x17d)](()=>{const _0x4516de=_0x3902fa;let _0x539dd2=getScore(_0x4516de(0x14b),_0x26137c,!![]),_0x75496f=getScore(_0x4516de(0x16d),_0x26137c,!![]);new ModalFormData()['title']('Bank\x20Addon')[_0x4516de(0x198)](_0x4516de(0x159)+_0x75496f+_0x4516de(0x150)+bankData['pe']+_0x4516de(0x163)+bankData['se']+_0x4516de(0x173),_0x4516de(0x174))[_0x4516de(0x183)](_0x26137c)[_0x4516de(0x19c)](_0x28b412=>{const _0x2c236e=_0x4516de;if(_0x28b412[_0x2c236e(0x154)])return;let _0x3b05f0=_0x28b412[_0x2c236e(0x190)][0x0];if(!isNaN(_0x3b05f0)&&_0x3b05f0>0x0&&_0x3b05f0<=_0x539dd2)_0x26137c[_0x2c236e(0x18a)]('scoreboard\x20players\x20add\x20@s\x20bank\x20'+_0x3b05f0),_0x26137c[_0x2c236e(0x18a)](_0x2c236e(0x158)+_0x3b05f0),_0x26137c[_0x2c236e(0x18a)]('playsound\x20random.orb'),_0x26137c[_0x2c236e(0x175)](_0x2c236e(0x152)+_0x3b05f0+'$');else _0x3b05f0>_0x539dd2?(_0x26137c['sendMessage']('§cเงินคุณมีไม่พอ\x20§a'+_0x3b05f0+'$'),_0x26137c['runCommand']('playsound\x20random.break')):(_0x26137c[_0x2c236e(0x175)](_0x2c236e(0x18e)),_0x26137c[_0x2c236e(0x18a)](_0x2c236e(0x192)));});});}function withdraw(_0x4f4ec3){const _0xe33682=_0x394faf;system[_0xe33682(0x17d)](()=>{const _0x264eb0=_0xe33682;let _0x5a0e50=getScore(_0x264eb0(0x16d),_0x4f4ec3,!![]),_0x4c6dfb=getScore('bank',_0x4f4ec3,!![]);new ModalFormData()[_0x264eb0(0x191)](_0x264eb0(0x14f))['textField'](_0x264eb0(0x159)+_0x4c6dfb+_0x264eb0(0x181),_0x264eb0(0x19e))['show'](_0x4f4ec3)[_0x264eb0(0x19c)](_0x329a8f=>{const _0x513fe3=_0x264eb0;if(_0x329a8f[_0x513fe3(0x154)])return;let _0x514f41=_0x329a8f['formValues'][0x0];if(!isNaN(_0x514f41)&&_0x514f41>0x0&&_0x514f41<=_0x4c6dfb)_0x4f4ec3[_0x513fe3(0x18a)](_0x513fe3(0x15a)+_0x514f41),_0x4f4ec3[_0x513fe3(0x18a)](_0x513fe3(0x176)+_0x514f41),_0x4f4ec3[_0x513fe3(0x18a)]('playsound\x20random.orb'),_0x4f4ec3[_0x513fe3(0x175)](_0x513fe3(0x177)+_0x514f41+'$');else _0x514f41>_0x4c6dfb?(_0x4f4ec3[_0x513fe3(0x175)](_0x513fe3(0x186)+_0x514f41+'$'),_0x4f4ec3[_0x513fe3(0x18a)](_0x513fe3(0x192))):(_0x4f4ec3[_0x513fe3(0x175)](_0x513fe3(0x18e)),_0x4f4ec3[_0x513fe3(0x18a)](_0x513fe3(0x192)));});});}function total(_0x217d59){const _0xfe1b87=_0x394faf;let _0x3caaed=getScore('bank',_0x217d59,!![]),_0x251821=getScore(_0xfe1b87(0x155),_0x217d59,!![]);new ActionFormData()[_0xfe1b87(0x191)](_0xfe1b87(0x149))[_0xfe1b87(0x14d)]('Ok','textures/ui/realms_slot_check')[_0xfe1b87(0x14c)](_0xfe1b87(0x17a)+_0x3caaed+'$\x0a§bคุณจะได้รับดอกเบี้ย\x20§e'+_0x3caaed*bankData['pe']/0x64+'$\x0a§bจะได้รับดอกเบี้ยใน:\x20§c'+_0x251821+_0xfe1b87(0x195))[_0xfe1b87(0x183)](_0x217d59);}system[_0x394faf(0x180)](()=>{const _0x385cd8=_0x394faf;world[_0x385cd8(0x14e)]()[_0x385cd8(0x170)](_0x563b10=>{const _0x1864ad=_0x385cd8;let _0x48a071=getScore(_0x1864ad(0x155),_0x563b10,!![]),_0x5894cf=getScore(_0x1864ad(0x16d),_0x563b10,!![]);_0x48a071===0x0&&_0x563b10[_0x1864ad(0x18a)](_0x1864ad(0x153)+bankData['se']),_0x48a071===0x1&&(_0x563b10[_0x1864ad(0x18a)]('scoreboard\x20players\x20add\x20@s\x20bank\x20'+Math[_0x1864ad(0x18b)](_0x5894cf*bankData['pe']/0x64)),_0x563b10[_0x1864ad(0x175)](_0x1864ad(0x194)+_0x5894cf*bankData['pe']/0x64+'$'),_0x563b10[_0x1864ad(0x18a)](_0x1864ad(0x16b))),_0x48a071>0x0&&_0x563b10[_0x1864ad(0x18a)](_0x1864ad(0x165));});},0x14),world[_0x394faf(0x156)][_0x394faf(0x166)][_0x394faf(0x193)](_0x52057d=>{const _0x111183=_0x394faf;let _0x565e56=_0x52057d['itemStack'];_0x565e56[_0x111183(0x17b)]===_0x111183(0x197)&&config(_0x52057d['source']);});function _0x3e05(){const _0x466f96=['formValues','title','playsound\x20random.break','subscribe','§e[ธนาคาร]\x20§aคุณได้รับดอกเบี้ย\x20§c','§bs','getDimension','minecraft:ghast_tear','textField','§eCreator:\x20Bamip1\x0a§9Discord:\x20@bigc8888\x0a§cYoutube:\x20Bigc\x20Genuis\x0a§bเลือกเมนุที่ต้องการ','§bเวลาที่จะได้รับดอกเบี้ยในแต่ละรอบ\x20(วินาที)','textures/ui/settings_glyph_color_2x','then','textures/ui/hanging_sign_cherry','เช่น:\x20200','§g§rBank\x20Addon','player','money','body','button','getAllPlayers','Bank\x20Addon','\x0aใส่เงินที่ต้องการจะฝาก\x0aดอกเบี้ย\x20','§aเพิ่ม\x20Tag\x20','§aคุณได้ฝากเงินเข้าบัญชี\x20จำนวน\x20§c','scoreboard\x20players\x20set\x20@s\x20cd_bank\x20','canceled','cd_bank','beforeEvents','hasTag','scoreboard\x20players\x20remove\x20@s\x20money\x20','§eCreator:\x20Bamip1\x0a§9Discord:\x20@bigc8888\x0a§cYoutube:\x20Bigc\x20Genuis\x0a§bเงินในธนาคารปัจจุบัน:\x20','scoreboard\x20players\x20add\x20@s\x20money\x20','setDynamicProperty','3431408TradBm','1160740TMXKKw','textures/ui/book_metatag_default','scoreboard\x20objectives\x20add\x20money\x20dummy','5935825dRqTyV','เช่น:\x201','Deposit','\x20เปอร์เซนต์\x20ต่อ\x20','getObjective','scoreboard\x20players\x20remove\x20@s\x20cd_bank\x201','itemUse','ให้\x20Tag\x20entity','scoreboard\x20objectives\x20add\x20bank\x20dummy','\x20ให้\x20Entity\x20เรียบร้อย','44964geRCLY','playsound\x20random.orb','scoreboard','bank','§eCreator:\x20Bamip1\x0a§9Discord:\x20@bigc8888\x0a§cYoutube:\x20Bigc\x20Genuis\x0a§bเลือกเมนูที่ต้องการ','38697wStoYg','forEach','35FiLmss','Withdraw','\x20วินาที','เช่น:\x20400','sendMessage','scoreboard\x20players\x20remove\x20@s\x20bank\x20','§cถอนเงินออกจากบัญชี\x20จำนวน\x20§a','3714741BtEcOC','getParticipants','§eCreator:\x20Bamip1\x0a§9Discord:\x20@bigc8888\x0a§cYoutube:\x20Bigc\x20Genuis\x0a§bยอดเงินในบัญชีคุณ:\x20§a','typeId','tag\x20@e[r=2,type=!player]\x20add\x20','run','selection','bankData','runInterval','\x0aใส่เงินที่ต้องการจะถอน','scoreboard\x20objectives\x20add\x20cd_bank\x20dummy','show','getScore','parse','§cเงินในบัญชีคุณมีไม่พอ\x20§a','stringify','6293220TimKKm','string','runCommand','floor','เช่น:\x203600','118cXRBzx','§cใส่จำนวนเงินให้ถูกต้อง','§eCreator:\x20Bamip1\x0a§9Discord:\x20@bigc8888\x0a§cYoutube:\x20Bigc\x20Genuis\x0a§bดอกเบี้ยกี่เปอร์เซนต์'];_0x3e05=function(){return _0x466f96;};return _0x3e05();}function config(_0x401fda){const _0x14157c=_0x394faf;system[_0x14157c(0x17d)](()=>{const _0x177c33=_0x14157c;new ActionFormData()[_0x177c33(0x191)](_0x177c33(0x149))[_0x177c33(0x14c)](_0x177c33(0x16e))[_0x177c33(0x14d)]('กำหนดค่าต่างๆ',_0x177c33(0x19b))[_0x177c33(0x14d)](_0x177c33(0x167),_0x177c33(0x15e))['show'](_0x401fda)[_0x177c33(0x19c)](_0x10fecd=>{const _0x5ad932=_0x177c33;_0x10fecd[_0x5ad932(0x17e)]===0x0&&config1(_0x401fda),_0x10fecd[_0x5ad932(0x17e)]===0x1&&addtag(_0x401fda);});});}function config1(_0x55e3a3){const _0x4e467a=_0x394faf;new ModalFormData()['title'](_0x4e467a(0x149))[_0x4e467a(0x198)](_0x4e467a(0x18f),_0x4e467a(0x161))[_0x4e467a(0x198)](_0x4e467a(0x19a),_0x4e467a(0x18c))[_0x4e467a(0x183)](_0x55e3a3)[_0x4e467a(0x19c)](_0x24f562=>{const _0xdf9020=_0x4e467a;if(_0x24f562[_0xdf9020(0x154)])return;bankData={'pe':_0x24f562[_0xdf9020(0x190)][0x0],'se':_0x24f562['formValues'][0x1]},saveData(),_0x55e3a3['runCommand']('scoreboard\x20players\x20set\x20@a\x20cd_bank\x20'+_0x24f562[_0xdf9020(0x190)][0x1]),_0x55e3a3[_0xdf9020(0x175)]('§aบันทึกข้อมูลสำเร็จ'),_0x55e3a3[_0xdf9020(0x18a)](_0xdf9020(0x16b));});}function addtag(_0x55785a){const _0x466eae=_0x394faf;new ModalFormData()[_0x466eae(0x191)]('§g§rBank\x20Addon')[_0x466eae(0x198)]('§eCreator:\x20Bamip1\x0a§9Discord:\x20@bigc8888\x0a§cYoutube:\x20Bigc\x20Genuis\x0a§bใส่\x20Tag\x20ที่ต้องการให้\x20Entity\x20ในระยะ\x202\x20บล็อก','เช่น:\x20bank')['show'](_0x55785a)[_0x466eae(0x19c)](_0x1afdb4=>{const _0x3f527e=_0x466eae;if(_0x1afdb4[_0x3f527e(0x154)])return;let _0x29e2dc=_0x1afdb4[_0x3f527e(0x190)][0x0];_0x55785a[_0x3f527e(0x18a)](_0x3f527e(0x17c)+_0x29e2dc),_0x55785a[_0x3f527e(0x175)](_0x3f527e(0x151)+_0x29e2dc+_0x3f527e(0x169)),_0x55785a[_0x3f527e(0x18a)](_0x3f527e(0x16b));});}
+import { world, system } from "@minecraft/server";
+import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
+
+class Bank {
+    constructor() {
+        this.data = {};
+        this.load();
+        world.beforeEvents.playerInteractWithEntity.subscribe(e => {
+            if (e.target.hasTag('bank')) {
+                e.cancel = true;
+                system.run(() => this.menu(e.player));
+            }
+        });
+        system.runInterval(() => this.interest(), 20);
+    }
+
+    save() {
+        system.run(() => {
+            world.setDynamicProperty('bankData', JSON.stringify(this.data));
+        })
+    }
+
+    load() {
+        system.run(() => {
+            const d = world.getDynamicProperty('bankData');
+            this.data = d ? JSON.parse(d) : {};
+            if (!d) this.save();
+        })
+    }
+
+    menu(player) {
+        if (!world.scoreboard.getObjective("bank")) return world.scoreboard.addObjective("bank")
+        new ActionFormData()
+            .title('ธนาคาร').body('เลือกตัวเลือก:')
+            .button('ฝากเงิน', 'textures/ui/jump_pressed')
+            .button('ถอนเงิน', 'textures/ui/sneak_pressed')
+            .button('ยอดเงิน', 'textures/ui/realms_slot_check')
+            .show(player)
+            .then(r => [this.deposit, this.withdraw, this.total][r.selection]?.call(this, player));
+    }
+
+    deposit(player) {
+        this.input(player, 'ฝาก', (amount) => {
+            if (this.score('money', player) < amount) return player.sendMessage('§cคุณไม่มีเงินพอ!');
+            player.runCommand(`scoreboard players remove @s money ${amount}`);
+            player.runCommand(`scoreboard players add @s bank ${amount}`);
+            player.sendMessage(`§aฝากเงิน §c${amount}§a แล้ว!`);
+        });
+    }
+
+    withdraw(player) {
+        this.input(player, 'ถอน', (amount) => {
+            if (this.score('bank', player) < amount) return player.sendMessage('§cคุณไม่มีเงินพอในบัญชีธนาคาร!');
+            player.runCommand(`scoreboard players remove @s bank ${amount}`);
+            player.runCommand(`scoreboard players add @s money ${amount}`);
+            player.sendMessage(`§aถอนเงิน §c${amount}§a แล้ว!`);
+        });
+    }
+
+    total(player) {
+        player.sendMessage(`§aคุณมีเงิน §c${this.score('bank', player)}§a ในบัญชีธนาคาร!`);
+    }
+
+    input(player, type, cb) {
+        new ModalFormData()
+            .title('ธนาคาร')
+            .label(`จำนวนเงินที่ต้องการ${type}:`)
+            .textField('จำนวนเงิน', 'number')
+            .show(player)
+            .then(r => {
+                const amount = parseInt(r.formValues[1]);
+                if (isNaN(amount) || amount <= 0) return player.sendMessage('§cจำนวนเงินไม่ถูกต้อง!');
+                cb(amount);
+            });
+    }
+
+    score(obj, player) {
+        try {
+            const o = world.scoreboard.getObjective(obj);
+            return o.getScore(player.scoreboardIdentity) ?? 0;
+        } catch { return 0; }
+    }
+
+    interest() {
+        world.getPlayers().forEach(player => {
+            const score = this.score('bank', player);
+            const cd = this.score('cd_bank', player);
+            if (!this.data.pe || !this.data.se) return;
+            if (cd > 0) player.runCommand(`scoreboard players remove @s cd_bank 1`);
+            else {
+                player.runCommand(`scoreboard players add @s bank ${Math.floor(score * this.data.pe / 100)}`);
+                player.runCommand(`scoreboard players set @s cd_bank ${this.data.se}`);
+            }
+        });
+    }
+}
+
+new Bank();

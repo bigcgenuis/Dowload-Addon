@@ -2,8 +2,8 @@
 	"format_version": 2,
 	"header": {
 		"name": "Bank Addon",
-		"description": "Versions 0.0.1 By.Bamip1",
-		"uuid": "06fbd055-36d9-4c23-9ec4-1d2b741e767d",
+		"description": "Versions 0.0.2 By.Bamip1",
+		"uuid": "a9e3d866-d3cd-40aa-b757-f199de08131f",
 		"version": [
 			0,
 			0,
@@ -18,7 +18,7 @@
 	"modules": [
 		{
 			"type": "data",
-			"uuid": "34ed3edc-44d8-400e-8d18-12f6a5cbe50d",
+			"uuid": "b5d329df-ff51-4ac7-9022-b142b81f7bef",
 			"version": [
 				0,
 				0,
@@ -42,12 +42,12 @@
 		{
 			"description": "@minecraft/server module dependency",
 			"module_name": "@minecraft/server",
-			"version": "1.16.0-beta"
+			"version": "2.1.0-beta"
 		},
 		{
 			"description": "@minecraft/server-ui module dependency",
 			"module_name": "@minecraft/server-ui",
-			"version": "1.2.0"
+			"version": "2.1.0-beta"
 		}
 	]
 }
