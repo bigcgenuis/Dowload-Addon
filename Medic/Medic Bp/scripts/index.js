@@ -1,175 +1,156 @@
 import { world, system } from '@minecraft/server';
 import { ActionFormData, ModalFormData } from '@minecraft/server-ui';
 
-let medicData = {};
-
-function saveData() {
-    system.run(() => {
-        world.setDynamicProperty("medicData", JSON.stringify(medicData));
-    })
-}
-
-function loadData() {
-    system.run(() => {
-        let data = world.getDynamicProperty("medicData");
-        if (data) {
-            medicData = JSON.parse(data);
-        }
-    });
-}
-
-loadData();
-system.run(() => {
-    world.getDimension("overworld").runCommand("scoreboard objectives add wait dummy");
-    world.getDimension("overworld").runCommand("gamerule doimmediaterespawn true");
-})
-
-
-world.afterEvents.entityDie.subscribe(event => {
-    if (!event.deadEntity.hasTag('d') && !event.deadEntity.hasTag("medic")) {
-        event.deadEntity.addTag('d');
-        event.deadEntity.runCommand("scoreboard players set @s wait " + medicData.retime);
-        teleport(event.deadEntity);
+class MedicSystem {
+    data = {
+        sel: "title",
+        retime: 300,
+        cos: "15 66 30",
+        mo: 500
+    };
+    constructor() {
+        this.load();
+        system.run(() => {
+            const dim = world.getDimension("overworld");
+            dim.runCommand("scoreboard objectives add wait dummy");
+            dim.runCommand("gamerule doimmediaterespawn true");
+        });
+        this.registerEvents();
     }
-});
-
-world.beforeEvents.itemUse.subscribe(event => {
-    let item = event.itemStack;
-    if (item.typeId === "minecraft:feather") {
-        main(event.source);
+    save() {
+        system.run(() => world.setDynamicProperty("medicData", JSON.stringify(this.data)));
     }
-});
-
-function teleport(entity) {
-    system.runTimeout(() => {
-        entity.runCommand("tp @s " + medicData.cos);
-    }, 20);
-}
-
-function main(player) {
-    system.run(() => {
-        if (player.hasTag("Admin")) {
-            let messageTypes = ['เลือกจำพวกข้อความ', "title", "actionbar"];
-            new ModalFormData()
-                .title("§5Medic Addon")
-                .dropdown("§eCreator: §aBamip1\n§gเลือกจำพวกข้อความ", messageTypes)
-                .textField("§gกำหนดเวลาตอนตายแล้วจะเกิดเอง", "เช่น: 300")
-                .textField("§gพิกัดโรงพยาบาลตอนตาย", "เช่น 1 -60 1")
-                .textField("§gเงินที่หมอได้รับ และผู้ตายจะเสีย เวลาชุบ", "เช่น: 500")
-                .show(player)
-                .then(response => {
-                    if (!response.canceled) {
-                        let selectedMessageType = messageTypes[response.formValues[0]];
-                        let respawnTime = response.formValues[1];
-                        let hospitalCoordinates = response.formValues[2];
-                        let money = response.formValues[3];
-                        medicData.sel = selectedMessageType;
-                        medicData.retime = respawnTime;
-                        medicData.cos = hospitalCoordinates;
-                        medicData.mo = money;
-                        saveData();
-                        player.sendMessage("§cเวลารอเกิด: §a" + respawnTime + "\n§cพิกัดโรงพยาบาล: §a" + hospitalCoordinates + "\n§cเงิน: §a" + money);
-                        player.runCommand("playsound random.orb");
-                    }
-                });
-        }
-    });
-}
-
-world.beforeEvents.chatSend.subscribe(event => {
-    if (event.message === "cpr") {
-        event.cancel = true;
-        cpr(event.sender);
+    load() {
+        system.run(() => {
+            let d = world.getDynamicProperty("medicData");
+            if (d) this.data = JSON.parse(d);
+        });
     }
-});
-
-function cpr(player) {
-    system.runTimeout(() => {
-        let form = new ActionFormData();
-        form.title("§5Medic Addon");
-        form.body("กรุณาเลือกคนที่ต้องการชุบ");
-        let icons = ["icon_alex", "icon_steve"];
-        let randomIcon = icons[Math.floor(Math.random() * icons.length)];
-        let deadPlayers = world.getAllPlayers().filter(p => p.hasTag('de'));
-        if (deadPlayers.length > 0) {
-            deadPlayers.forEach(deadPlayer => {
-                form.button(deadPlayer.name, 'textures/ui/' + randomIcon);
+    getScore(obj, ent) {
+        try {
+            let o = world.scoreboard.getObjective(obj);
+            return o.getScore(ent.scoreboardIdentity) ?? 0;
+        } catch { return 0; }
+    }
+    teleport(entity) {
+        system.runTimeout(() => entity.runCommand("tp @s " + this.data.cos), 20);
+    }
+    showAdminForm(player, cb) {
+        let types = ['เลือกจำพวกข้อความ', "title", "actionbar"];
+        new ModalFormData()
+            .title("§5Medic Addon")
+            .dropdown("§eCreator: §aBamip1\n§gเลือกจำพวกข้อความ", types)
+            .textField("§gกำหนดเวลาตอนตายแล้วจะเกิดเอง", "เช่น: 300")
+            .textField("§gพิกัดโรงพยาบาลตอนตาย", "เช่น 1 -60 1")
+            .textField("§gเงินที่หมอได้รับ และผู้ตายจะเสีย เวลาชุบ", "เช่น: 500")
+            .show(player)
+            .then(r => {
+                if (!r.canceled) {
+                    let [sel, retime, cos, mo] = [types[r.formValues[0]], ...r.formValues.slice(1)];
+                    Object.assign(this.data, { sel, retime, cos, mo });
+                    this.save();
+                    player.sendMessage(`§cเวลารอเกิด: §a${retime}\n§cพิกัดโรงพยาบาล: §a${cos}\n§cเงิน: §a${mo}`);
+                    player.runCommand("playsound random.orb");
+                    cb && cb();
+                }
             });
-        } else {
-            form.button("§cไม่มีคนตายใกล้คุณ", 'textures/ui/redX1');
-        }
-        form.show(player).then(response => {
-            if (response.selection !== undefined && deadPlayers.length > 0) {
-                let selectedPlayer = deadPlayers[response.selection];
-                player.runCommand("scoreboard players add @s money " + medicData.mo);
-                selectedPlayer.runCommand("scoreboard players remove @s money " + medicData.mo);
-                player.sendMessage('§a+' + medicData.mo + "$ คุณได้ชุบ §c" + selectedPlayer.name);
-                selectedPlayer.sendMessage("§c-" + medicData.mo + "$ คุณได้ถูกชุบจากหมอ §a" + player.name);
-                selectedPlayer.removeTag('d');
-                selectedPlayer.removeTag('de');
-                player.runCommand("playsound random.orb");
-                selectedPlayer.runCommand("playsound random.orb");
-                selectedPlayer.runCommand("inputpermission set @s movement enabled");
+    }
+    showCPRForm(player, cb) {
+        system.runTimeout(() => {
+            let form = new ActionFormData().title("§5Medic Addon").body("กรุณาเลือกคนที่ต้องการชุบ");
+            let icons = ["icon_alex", "icon_steve"];
+            let playerLoc = player.location;
+            let deads = world.getAllPlayers().filter(p => 
+                p.hasTag('d') &&
+                Math.sqrt(
+                    Math.pow(p.location.x - playerLoc.x, 2) +
+                    Math.pow(p.location.y - playerLoc.y, 2) +
+                    Math.pow(p.location.z - playerLoc.z, 2)
+                ) <= 5
+            );
+            if (deads.length)
+                deads.forEach(p => form.button(p.name, 'textures/ui/' + icons[Math.floor(Math.random() * icons.length)]));
+            else
+                form.button("§cไม่มีคนตายใกล้คุณ", 'textures/ui/redX1');
+            form.show(player).then(res => {
+                if (res.selection !== undefined && deads.length) cb && cb(player, deads[res.selection]);
+            });
+        }, 20);
+    }
+    registerEvents() {
+        world.afterEvents.entityDie.subscribe(e => {
+            let ent = e.deadEntity;
+            let medics = world.getAllPlayers().filter(p => p.hasTag("medic"));
+            if (!ent.hasTag('d') && !ent.hasTag("medic")) {
+            ent.runCommand(`scoreboard players set @s wait ${this.data.retime}`);
+            if (!medics.length) ent.runCommand("scoreboard players set @a[tag=d] wait 30");
+            system.runTimeout(() => {
+                ent.addTag('d');
+            }, 1)
+            this.teleport(ent);
             }
         });
-    }, 20);
-}
-
-system.runInterval(() => {
-    world.getAllPlayers().forEach(player => {
-        if (player.hasTag('d')) {
-            player.sendMessage("§cคุณได้ตายต้องรอหมอมาชุบ");
-            player.runCommand("tellraw @a[tag=medic] {\"rawtext\":[{\"text\":\"§dมีคนต้องการความช่วยเหลือที่โรงพยาบาล\"}]}");
-        }
-    });
-}, 120);
-
-system.runInterval(() => {
-    let players = world.getAllPlayers();
-    let medics = players.filter(player => player.hasTag("medic"));
-    players.forEach(player => {
-        let waitScore = getScore("wait", player, true);
-        if (medics.length > 0 && player.hasTag('d')) {
-            player.runCommand("scoreboard players remove @s wait 1");
-            player.runCommand("title @s " + medicData.sel + " §cกำลังรอเกิดใน§f: §b" + (waitScore - 1));
-        }
-    });
-}, 20);
-
-system.runInterval(() => {
-    let players = world.getAllPlayers();
-    let medics = players.filter(player => player.hasTag("medic"));
-    players.forEach(player => {
-        let waitScore = getScore('wait', player, true);
-        if (player.hasTag("medic")) {
-            player.runCommand("tag @a[r=5,tag=d,tag=!medic] add de");
-            player.runCommand("tag @a[rm=5,tag=d,tag=!medic] remove de");
-        }
-        if (player.hasTag('d')) {
-            player.runCommand("inputpermission set @s movement disabled");
-            player.runCommand("effect @s instant_health 2 255 true");
-        }
-        if (medics.length < 1) {
-            player.runCommand("scoreboard players set @a[tag=d] wait 0");
-        }
-        if (waitScore === 0 && player.hasTag('d')) {
-            player.runCommand("tag @s remove d");
-            player.runCommand("tag @s remove de");
-            player.runCommand("scoreboard players remove @s money " + medicData.mo);
-            player.sendMessage("§c-" + medicData.mo + "$ คุณได้เกิดอัตโนมัติ");
-            player.runCommand("inputpermission set @s movement enabled");
-        }
-    });
-});
-//By Aitji Gamer
-function getScore(objectiveName, entity, isPlayer = true) {
-    try {
-        let objective = world.scoreboard.getObjective(objectiveName);
-        if (typeof entity == "string") {
-            return objective.getScore(objective.getParticipants().find(participant => participant.displayName == entity)) ?? 0;
-        }
-        return objective.getScore(entity.scoreboardIdentity) ?? 0;
-    } catch {
-        return 0;
+        world.afterEvents.itemUse.subscribe(e => {
+            if (e.itemStack.typeId === "minecraft:feather") {
+                if (e.source.hasTag("Admin")) this.showAdminForm(e.source);
+            }
+        });
+        world.beforeEvents.chatSend.subscribe(e => {
+            if (e.message === "cpr") {
+                e.cancel = true;
+                this.showCPRForm(e.sender, (medic, target) => {
+                    medic.runCommand(`scoreboard players add @s money ${this.data.mo}`);
+                    target.runCommand(`scoreboard players remove @s money ${this.data.mo}`);
+                    medic.sendMessage(`§a+${this.data.mo}$ คุณได้ชุบ §c${target.name}`);
+                    target.sendMessage(`§c-${this.data.mo}$ คุณได้ถูกชุบจากหมอ §a${medic.name}`);
+                    target.removeTag('d'); target.removeTag('de');
+                    medic.runCommand("playsound random.orb");
+                    target.runCommand("playsound random.orb");
+                    target.runCommand("inputpermission set @s movement enabled");
+                });
+            }
+        });
+        system.runInterval(() => {
+            world.getAllPlayers().forEach(p => {
+                if (p.hasTag('d')) {
+                    p.sendMessage("§cคุณได้ตายต้องรอหมอมาชุบ");
+                    p.runCommand('tellraw @a[tag=medic] {"rawtext":[{"text":"§dมีคนต้องการความช่วยเหลือที่โรงพยาบาล"}]}');
+                }
+            });
+        }, 120);
+        system.runInterval(() => {
+            let players = world.getAllPlayers(), medics = players.filter(p => p.hasTag("medic"));
+            players.forEach(p => {
+                let wait = this.getScore("wait", p);
+                if (p.hasTag('d')) {
+                    p.runCommand("scoreboard players remove @s wait 1");
+                    p.runCommand(`title @s ${this.data.sel} §cกำลังรอเกิดใน§f: §b${wait - 1}`);
+                }
+            });
+        }, 20);
+        system.runInterval(() => {
+            let players = world.getAllPlayers(), medics = players.filter(p => p.hasTag("medic"));
+            players.forEach(p => {
+                if (!world.scoreboard.getObjective('wait')) return world.scoreboard.addObjective('wait');
+                let wait = this.getScore('wait', p);
+                if (p.hasTag("medic")) {
+                    p.runCommand("tag @a[r=5,tag=d,tag=!medic] add de");
+                    p.runCommand("tag @a[rm=5,tag=d,tag=!medic] remove de");
+                }
+                if (p.hasTag('d')) {
+                    p.runCommand("inputpermission set @s movement disabled");
+                    p.runCommand("effect @s instant_health 2 255 true");
+                }
+                if (wait === 0 && p.hasTag('d')) {
+                    p.runCommand("tag @s remove d");
+                    p.runCommand("tag @s remove de");
+                    p.runCommand(`scoreboard players remove @s money ${this.data.mo}`);
+                    p.sendMessage(`§c-${this.data.mo}$ คุณได้เกิดอัตโนมัติ`);
+                    p.runCommand("inputpermission set @s movement enabled");
+                }
+            });
+        });
     }
 }
+
+new MedicSystem();
